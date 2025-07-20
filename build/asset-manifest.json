@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.87c8df7d.css",
+    "main.js": "/static/js/main.730fd1b6.js",
+    "static/media/malang.jpg": "/static/media/malang.80142997480d094258d0.jpg",
+    "static/media/logo.png": "/static/media/logo.9020e09556e6f2b8449d.png",
+    "index.html": "/index.html",
+    "main.87c8df7d.css.map": "/static/css/main.87c8df7d.css.map",
+    "main.730fd1b6.js.map": "/static/js/main.730fd1b6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.87c8df7d.css",
+    "static/js/main.730fd1b6.js"
+  ]
+}
