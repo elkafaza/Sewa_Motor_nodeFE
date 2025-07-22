@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios';
-import '../api'
+import api from '../api';
 
 function ForgotPassword() {
   const [email, setEmail] = useState('')

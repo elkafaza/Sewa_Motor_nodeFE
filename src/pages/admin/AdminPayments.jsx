@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './adminPayments.css';
-import '../../api';
+import api from '../../api';
 
 const AdminPayments = () => {
   const [payments, setPayments] = useState([]);

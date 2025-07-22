@@ -1,6 +1,7 @@
 import { useState, } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import api from '../api';
 
 const ResetPassword = () => {
   const { token } = useParams();
@@ -10,7 +11,7 @@ const ResetPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`/api/auth/reset-password/${token}`, { password });
+      const res = await api.post(`/auth/reset-password/${token}`, { password });
       setMessage(res.data.message);
     } catch (err) {
       setMessage(err.response?.data?.message || 'Gagal reset password');

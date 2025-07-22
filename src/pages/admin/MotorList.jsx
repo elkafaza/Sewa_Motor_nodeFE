@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './MotorList.css';
-import '../../api';
+import api from '../../api';
 
 const MotorList = () => {
   const [motors, setMotors] = useState([]);

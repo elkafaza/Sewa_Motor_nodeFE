@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './GoogleReview.css'; 
-import '../api';
+import api from '../api';
 
 function GoogleReview() {
   const [reviews, setReviews] = useState([]);

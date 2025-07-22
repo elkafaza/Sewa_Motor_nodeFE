@@ -5,7 +5,7 @@ import GoogleReview from '../components/GoogleReview';
 import { useTranslation } from 'react-i18next';
 import './home.css';
 import malangBg from '../assets/malang.jpg';
-import '../api';
+import api from '../api';
 
 const Home = () => {
   const [motors, setMotors] = useState([]);

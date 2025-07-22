@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import '../../api';
+import api from '../../api';
 
 const PaymentHistory = () => {
   const { user, loading } = useContext(AuthContext);
