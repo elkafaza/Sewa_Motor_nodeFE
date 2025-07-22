@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Payment.css';
+import '../../api';
 
 const Payment = () => {
   const location = useLocation();
@@ -22,7 +23,7 @@ const Payment = () => {
   useEffect(() => {
   const fetchUser = async () => {
     try {
-      const res = await axios.get('/api/auth/getUser', { withCredentials: true });
+      const res = await api.get('/auth/getUser', { withCredentials: true });
       setUser(res.data.data);
     } catch (error) {
       // Kalau gagal ambil user (belum login), redirect ke login
@@ -33,7 +34,7 @@ const Payment = () => {
 
   const fetchMotors = async () => {
     try {
-      const res = await axios.get('/api/admin/motor');
+      const res = await api.get('/admin/motor');
       setMotors(res.data);
     } catch (error) {
       console.error('Gagal fetch motor:', error);
@@ -80,14 +81,14 @@ const Payment = () => {
        
       };
 
-      const res = await axios.post('/api/payment', paymentData, { withCredentials: true });
+      const res = await api.post('/payment', paymentData, { withCredentials: true });
 
       if (form.method === 'transfer' && bukti) {
         const formData = new FormData();
         formData.append('bukti', bukti);
         formData.append('paymentId', res.data._id);
 
-        await axios.post('/api/payment/upload-bukti', formData, {
+        await api.post('/payment/upload-bukti', formData, {
           headers: { 'Content-Type': 'multipart/form-data' },
           withCredentials: true,
         });

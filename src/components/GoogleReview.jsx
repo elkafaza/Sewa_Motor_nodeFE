@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './GoogleReview.css'; // Pastikan file ini ada untuk styling
+import './GoogleReview.css'; 
+import '../api';
 
 function GoogleReview() {
   const [reviews, setReviews] = useState([]);
   const [rating, setRating] = useState(null);
 
   useEffect(() => {
-    axios.get('/api/reviews')
+    api.get('/reviews')
       .then(res => {
         setReviews(res.data.reviews || []);
         setRating(res.data.rating || null);

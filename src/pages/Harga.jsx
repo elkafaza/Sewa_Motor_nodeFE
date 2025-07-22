@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './harga.css';
+import '../api';
 
 const Harga = () => {
   const [motors, setMotors] = useState([]);
@@ -10,7 +11,7 @@ const Harga = () => {
   useEffect(() => {
     const fetchMotors = async () => {
       try {
-        const res = await axios.get('/api/admin/motor');
+        const res = await api.get('/admin/motor');
         setMotors(res.data);
       } catch (err) {
         console.error('Gagal ambil data harga motor:', err);

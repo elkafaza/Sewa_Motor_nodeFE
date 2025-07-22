@@ -5,6 +5,7 @@ import GoogleReview from '../components/GoogleReview';
 import { useTranslation } from 'react-i18next';
 import './home.css';
 import malangBg from '../assets/malang.jpg';
+import '../api';
 
 const Home = () => {
   const [motors, setMotors] = useState([]);
@@ -17,7 +18,7 @@ const Home = () => {
   useEffect(() => {
     const fetchMotors = async () => {
       try {
-        const res = await axios.get('/api/admin/motor');
+        const res = await api.get('/admin/motor');
         setMotors(res.data);
       } catch (err) {
         console.error('Gagal ambil data motor:', err);

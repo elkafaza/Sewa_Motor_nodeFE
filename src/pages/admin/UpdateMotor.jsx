@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './updateMotor.css';
+import '../../api';
 
 const UpdateMotor = () => {
   const [motors, setMotors] = useState([]);
@@ -8,7 +9,7 @@ const UpdateMotor = () => {
   useEffect(() => {
     const fetchMotors = async () => {
       try {
-        const res = await axios.get('/api/admin/motor');
+        const res = await api.get('/admin/motor');
         setMotors(res.data);
       } catch (err) {
         console.error(err);
@@ -28,7 +29,7 @@ const UpdateMotor = () => {
   const deleteMotorData = async (id) => {
   if (window.confirm('Yakin ingin menghapus motor ini?')) {
     try {
-      await axios.delete(`/api/admin/motor/${id}`);
+      await api.delete(`/admin/motor/${id}`);
       setMotors((prev) => prev.filter((m) => m._id !== id));
       alert('Motor berhasil dihapus');
     } catch (err) {
@@ -49,7 +50,7 @@ const UpdateMotor = () => {
       formData.append('model', motor.model);
       if (motor.gambarFile) formData.append('gambar', motor.gambarFile);
 
-      await axios.put(`/api/admin/motor/${id}`, formData, {
+      await api.put(`/admin/motor/${id}`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
 

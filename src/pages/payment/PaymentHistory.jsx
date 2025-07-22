@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import '../../api';
 
 const PaymentHistory = () => {
   const { user, loading } = useContext(AuthContext);
@@ -14,7 +15,7 @@ const PaymentHistory = () => {
 
     const fetchPayments = async () => {
       try {
-        const res = await axios.get('/api/payment/user', {
+        const res = await api.get('/payment/user', {
           withCredentials: true,
         });
         console.log('📦 Pembayaran user login:', res.data);

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './paymentstatus.css';
+import '../../api';
 
 const PaymentStatus = () => {
   const location = useLocation();
@@ -21,7 +22,7 @@ const PaymentStatus = () => {
 
     const fetchPayment = async () => {
       try {
-        const res = await axios.get(`/api/payment/${paymentId}`, {
+        const res = await api.get(`/payment/${paymentId}`, {
           withCredentials: true,
         });
         setPayment(res.data);

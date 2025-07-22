@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './adminPayments.css';
+import '../../api';
 
 const AdminPayments = () => {
   const [payments, setPayments] = useState([]);
@@ -9,7 +10,7 @@ const AdminPayments = () => {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const res = await axios.get('/api/payment', {
+        const res = await api.get('/payment', {
           withCredentials: true,
         });
 
@@ -41,8 +42,8 @@ const AdminPayments = () => {
     if (!newStatus) return;
 
     try {
-      await axios.patch(
-        `/api/admin/payments/${id}`,
+      await api.patch(
+        `/admin/payments/${id}`,
         { status: newStatus },
         { withCredentials: true }
       );

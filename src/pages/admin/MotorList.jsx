@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './MotorList.css';
+import '../../api';
 
 const MotorList = () => {
   const [motors, setMotors] = useState([]);
@@ -15,7 +16,7 @@ const MotorList = () => {
 
   const fetchMotors = async () => {
     try {
-      const res = await axios.get('/api/admin/motor', { withCredentials: true });
+      const res = await api.get('/admin/motor', { withCredentials: true });
       setMotors(res.data);
     } catch (error) {
       console.error('Gagal ambil data motor:', error);
@@ -43,7 +44,7 @@ const MotorList = () => {
         formData.append(key, form[key]);
       }
 
-      await axios.post('/api/admin/motor', formData, {
+      await api.post('/admin/motor', formData, {
   headers: { 'Content-Type': 'multipart/form-data' },
   withCredentials: true
 });
