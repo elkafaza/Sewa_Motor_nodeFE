@@ -66,7 +66,7 @@ const Home = () => {
         <div className="motor-grid">
           {motors.slice(0, 4).map((motor) => (
             <div className="motor-card" key={motor._id}>
-              <img src={motor.gambar} alt={motor.brand} />
+              <img src={`https://sewa-motor-nodebe.onrender.com${motor.gambar}`} alt={motor.brand} />
               <h3>{motor.brand} – {motor.model}</h3>
               <p><strong>{t('plate')}:</strong> {motor.motorId}</p>
               <p><strong>{t('price')}:</strong> Rp {parseInt(motor.harga).toLocaleString()}</p>

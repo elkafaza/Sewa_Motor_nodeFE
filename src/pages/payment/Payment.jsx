@@ -123,7 +123,7 @@ const Payment = () => {
             <p><strong>Status:</strong></p>
 
             <img
-              src={`/uploads/${selectedMotor.gambar.replace(/^.*[\\/]/, '')}`}
+              src={`https://sewa-motor-nodebe.onrender.com${selectedMotor.gambar.replace(/^.*[\\/]/, '')}`}
               alt={`${selectedMotor.brand} ${selectedMotor.motorId}`}
               className="motor-image"
             />

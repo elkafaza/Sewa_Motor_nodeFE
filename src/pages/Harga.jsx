@@ -30,7 +30,7 @@ const Harga = () => {
       <div className="motor-grid">
         {motors.map((motor) => (
           <div className="motor-card" key={motor._id}>
-            <img src={motor.gambar} alt={motor.brand} />
+            <img src={`https://sewa-motor-nodebe.onrender.com${motor.gambar}`} alt={motor.brand} />
             <h3>{motor.brand} – {motor.model}</h3>
             <p><strong>Plat:</strong> {motor.motorId}</p>
             <p><strong>Harga per Hari:</strong> Rp {parseInt(motor.harga).toLocaleString()}</p>
