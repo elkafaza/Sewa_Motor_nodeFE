@@ -61,7 +61,7 @@ const Home = () => {
         <h2 className="motor-title">{t('motorTitle')}</h2>
         <p className="motor-description">{t('motorDescription')}</p>
         <div className="motor-button-container">
-          <a href="/harga" className="motor-price-button">{t('motorPriceLink')}</a>
+          <a ><Link to="/harga" className="motor-price-button"/>{t('motorPriceLink')}</a>
         </div>
         <div className="motor-grid">
           {motors.slice(0, 4).map((motor) => (
