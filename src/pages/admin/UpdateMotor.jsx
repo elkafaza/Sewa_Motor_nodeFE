@@ -66,7 +66,7 @@ const UpdateMotor = () => {
       <h2>Update Data Motor</h2>
       {motors.map((motor) => (
         <div key={motor._id} className="motor-item">
-          <img src={motor.gambar} alt={motor.brand} width="100" />
+          <img src={`https://sewa-motor-nodebe.onrender.com${motor.gambar}`} alt={motor.brand} width="100" />
 
           <label>Plat Nomor:</label>
           <input

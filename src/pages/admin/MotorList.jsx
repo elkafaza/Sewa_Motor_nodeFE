@@ -92,7 +92,7 @@ alert('Motor berhasil diupload');
       <div className="motor-grid">
         {motors.map((motor) => (
           <div className="motor-card" key={motor._id}>
-            <img src={motor.gambar} alt={motor.motorId} />
+            <img src={`https://sewa-motor-nodebe.onrender.com${motor.gambar}`} alt={motor.motorId} />
             <h3>{motor.motorId} – {motor.brand}</h3>
             <p><strong>Model:</strong> {motor.model}</p>
             <p><strong>Harga:</strong> Rp {parseInt(motor.harga).toLocaleString()}</p>
