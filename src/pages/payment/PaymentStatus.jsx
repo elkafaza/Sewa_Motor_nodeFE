@@ -61,7 +61,7 @@ const PaymentStatus = () => {
           <div>
             <p><strong>Bukti Transfer:</strong></p>
             <img
-              src={`https://sewa-motor-nodebe.onrender.com${p.buktiTransfer}`}
+              src={`https://sewa-motor-nodebe.onrender.com${payment.buktiTransfer}`}
               alt="Bukti Transfer"
               className="bukti-image"
             />

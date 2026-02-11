@@ -120,12 +120,12 @@ const AdminPayments = () => {
           '-' // tetap render <td> walau kosong
         ) : (
           <a
-            href={`https://sewa-motor-nodebe.onrender.com${p.buktiTransfer}`}
+            href={`https://sewa-motor-nodebe.onrender.com${payments.buktiTransfer}`}
             target="_blank"
             rel="noopener noreferrer"
           >
             <img
-              src={`https://sewa-motor-nodebe.onrender.com${p.buktiTransfer}`}
+              src={`https://sewa-motor-nodebe.onrender.com${payments.buktiTransfer}`}
               alt="Bukti Transfer"
               style={{ width: '60px', height: 'auto', borderRadius: '4px' }}
             />
